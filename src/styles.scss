@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+// daenerys theme configs
+@import 'styles/buttons.scss';
+
+
+// base configs
+html, body {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+}
