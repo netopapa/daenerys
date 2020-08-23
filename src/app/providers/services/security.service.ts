@@ -33,4 +33,8 @@ export class SecurityService extends RestService {
   public isAuthenticated(): boolean {
     return localStorage.getItem('token') ? true : false;
   }
+
+  public goHome(): void {
+    this.router.navigate(['/']);
+  }
 }

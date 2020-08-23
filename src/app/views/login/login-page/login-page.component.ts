@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { Credentials, SecurityService } from '../../../providers/services/security.service';
+import { MainLoadingService } from '../../../shared/main-loading/main-loading.service';
 
 // email: 'eve.holt@reqres.in',
 // password: 'askasoasj'
@@ -12,21 +12,23 @@ import { Credentials, SecurityService } from '../../../providers/services/securi
 })
 export class LoginPageComponent {
 
-  public user: Credentials = {email: 'eve.holt@reqres.in', password: 'asasasas'};
+  public user: Credentials = { email: 'eve.holt@reqres.in', password: 'asasasas' };
 
   constructor(
-    private security: SecurityService,
-    private router: Router
+    private security: SecurityService
   ) { }
 
   public login(): void {
+    MainLoadingService.show();
     this.security.login(this.user).subscribe(
       success => {
         localStorage.setItem('token', success.token);
-        this.router.navigate(['/']);
+        this.security.goHome();
+        MainLoadingService.hide();
       },
       error => {
         console.error(error);
+        MainLoadingService.hide();
       }
     );
   }

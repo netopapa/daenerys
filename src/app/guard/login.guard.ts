@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
-import { CanLoad } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, CanLoad, Route } from '@angular/router';
+import { Observable } from 'rxjs';
 import { SecurityService } from '../providers/services/security.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdminGuard implements CanLoad {
+export class LoginGuard implements CanLoad {
 
   constructor(private security: SecurityService) { }
 
   canLoad(): boolean {
-    if (this.security.isAuthenticated()) {
+    if (!this.security.isAuthenticated()) {
       return true;
     } else {
-      this.security.logout();
+      this.security.goHome();
     }
   }
 
