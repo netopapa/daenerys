@@ -1,0 +1,12 @@
+<div *ngIf="showToast" id="notify" class="card" [ngClass]="{
+    'success': notify.type === 'SUCCESS', 
+    'error': notify.type === 'ERROR'
+}">
+    <div class="icon-area">
+        <ng-container *ngIf="notify.type === 'SUCCESS'">✓</ng-container>
+        <ng-container *ngIf="notify.type === 'ERROR'">⚠</ng-container>
+    </div>
+    <div class="text-area">
+        <h5>{{notify.message}}</h5>
+    </div>
+</div>
