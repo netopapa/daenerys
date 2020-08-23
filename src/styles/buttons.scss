@@ -1,4 +1,26 @@
 button {
     outline: 0;
-}
+    border-radius: 4px;
+    padding: 5px 8px;
+    transition: 0.3s linear;
 
+    &:disabled {
+        filter: grayscale(100%);
+    }
+
+    &.btn-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background-color: transparent;
+
+    &:hover {
+        color: #ffffff;
+        background-color: var(--primary);
+        cursor: pointer;
+    }
+}

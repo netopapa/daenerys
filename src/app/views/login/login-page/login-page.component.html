@@ -1,3 +1,13 @@
-<input type="text" [(ngModel)]="user.email">
-<input type="password" [(ngModel)]="user.password">
-<button type="submit" (click)="login()">ENTRAR</button>
+<div id="login-page" class="centralized">
+    <div class="card">
+        <div class="img-area centralized"><div class="img-header"></div></div>
+        <h5 class="text-header center blue-text">LOGIN</h5>
+
+        <form #loginForm="ngForm">
+            <input placeholder="username@email.com" type="email" name="email" [(ngModel)]="user.email" required>
+            <input placeholder="password" type="password" name="password" [(ngModel)]="user.password" required>
+
+            <button class="btn-center" type="submit" [disabled]="!loginForm.form.valid" (click)="login()">SIGN IN</button>
+        </form>
+    </div>
+</div>

@@ -1,11 +1,27 @@
 // daenerys theme configs
-@import 'styles/buttons.scss';
-@import 'styles/cards.scss';
-
+@import "styles/colors.scss";
+@import "styles/buttons.scss";
+@import "styles/cards.scss";
 
 // base configs
-html, body {
+html,
+body {
     margin: 0;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
     font-size: 2em;
+}
+
+// helpers
+.center {
+    text-align: center;
+}
+
+.centralized {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blue-text {
+    color: var(--primary);
 }

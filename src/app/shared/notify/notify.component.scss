@@ -9,11 +9,11 @@
     animation-duration: 0.3s;
 
     &.success {
-        background-color: #39a298;
+        background-color: var(--success);
     }
 
     &.error {
-        background-color: #e03225;
+        background-color: var(--danger);
     }
 
     .icon-area {

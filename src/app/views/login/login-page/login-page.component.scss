@@ -1,0 +1,89 @@
+#login-page {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("/assets/images/login-bg.jpg");
+    animation-name: movesky;
+    animation-duration: 75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    will-change: background-position;
+
+    .card {
+        background-color: rgba(255,255,255, 0.92);
+
+        .img-area {
+            .img-header {
+                border-radius: 50%;
+                width: 120px;
+                height: 120px;
+                box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.25);
+                background-color: #417786;
+                background-image: url("/assets/images/daenerys.png");
+                background-position: center center;
+                background-size: cover;
+                transform: translateY(-50%);
+            }
+        }
+
+        .text-header {
+            font-size: 20px;
+            margin: 0;
+            transform: translateY(-20px);
+        }
+
+        form {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            input {
+                margin-bottom: 20px;
+                width: calc(90% - 16px);
+                outline: 0;
+                border-radius: 5px;
+                color: #3a3a3a;
+                font-weight: bold;
+                border: none;
+                padding: 10px 8px;
+                box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, 0.25);
+                transition: box-shadow .2s linear;
+                
+                &:focus {
+                    box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            button {
+                width: 90%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+@keyframes movesky {
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 500%;
+    }
+}
+
+@media only screen and (min-width: 701px) {
+    .card {
+        width: 320px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .card {
+        width: 90%;
+    }
+}
