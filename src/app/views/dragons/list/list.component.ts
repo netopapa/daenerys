@@ -27,9 +27,9 @@ export class ListComponent implements OnInit {
     this.service.getAll().subscribe(
       success => {
         this.dragons = success;
-        MainLoadingService.show();
+        MainLoadingService.hide();
       },
-      () => { MainLoadingService.show(); }
+      () => { MainLoadingService.hide(); }
     );
   }
 

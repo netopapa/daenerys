@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { MainLoadingComponent } from './shared/main-loading/main-loading.component';
 import { NotifyComponent } from './shared/notify/notify.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,13 +1,21 @@
 <div id="login-page" class="centralized">
     <div class="card">
-        <div class="img-area centralized"><div class="img-header"></div></div>
+        <div class="img-area centralized">
+            <div class="img-header"></div>
+        </div>
         <h5 class="text-header center blue-text">LOGIN</h5>
 
         <form #loginForm="ngForm">
-            <input placeholder="username@email.com" type="email" name="email" [(ngModel)]="user.email" required>
-            <input placeholder="password" type="password" name="password" [(ngModel)]="user.password" required>
+            <div class="form-field" [appInputAlert]="{value: user.email, field: inpEmail}">
+                <input #inpEmail="ngModel" placeholder="username@email.com" type="email" name="email" [(ngModel)]="user.email" required>
+            </div>
 
-            <button class="btn-center" type="submit" [disabled]="!loginForm.form.valid" (click)="login()">SIGN IN</button>
+            <div class="form-field" [appInputAlert]="{value: user.password, field: inpPassword}">
+                <input #inpPassword="ngModel" placeholder="password" type="password" name="password" [(ngModel)]="user.password" required>
+            </div>
+
+            <button class="btn-center" type="submit" [disabled]="!loginForm.form.valid" (click)="login()">SIGN
+                IN</button>
         </form>
     </div>
 </div>
