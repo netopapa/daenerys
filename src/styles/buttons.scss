@@ -39,4 +39,26 @@ button {
         }
     }
 
+    &.btn-closed {
+        border-color: #666666;
+        color: #ffffff;
+        background-color: transparent;
+    
+        &:hover {
+            background-color: #666666;
+            cursor: pointer;
+        }
+    }
+
+    &.btn-success {
+        border-color: var(--success);
+        color: #ffffff;
+        background-color: transparent;
+    
+        &:hover {
+            background-color: var(--success);
+            cursor: pointer;
+        }
+    }
+
 }

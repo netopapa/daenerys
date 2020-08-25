@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Dragon } from 'src/app/providers/models/dragon.model';
 import { MainLoadingService } from 'src/app/shared/main-loading/main-loading.service';
 import { DragonService } from '../../../providers/services/dragon.service';
+import { NotifyService, NotifyType } from 'src/app/shared/notify/notify.service';
 
 @Component({
   selector: 'app-list',
@@ -15,7 +16,8 @@ export class ListComponent implements OnInit {
 
   constructor(
     private service: DragonService,
-    private route: Router
+    private route: Router,
+    private notify: NotifyService
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +44,7 @@ export class ListComponent implements OnInit {
     this.service.remove(item.id).subscribe(
       () => {
         this.getDragons();
+        this.notify.toast(NotifyType.SUCCESS, 'item deleted !');
       }
     );
   }

@@ -1,0 +1,79 @@
+#dragon-form {
+    margin-top: 70px;
+
+    & > .card {
+        background-color: var(--primary);
+        width: 90%;
+        max-width: 1000px;
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .card {
+                transform: translateY(-50%);
+                background-color: var(--success);
+            }
+        }
+
+        form {
+            width: 100%;
+
+            & > div:nth-child(2){
+                margin-top: 15px;
+            }
+
+            label {
+                font-weight: bold;
+            }
+
+            textarea {
+                height: 90px;
+            }
+
+            .form-row {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .actions {
+                margin-top: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                button {
+                    margin: 0 5px;
+                    font-weight: bold;
+                    font-size: 19px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 701px) {
+    #dragon-form {
+        .form-row {
+            .half {
+                width: 45%;
+            }
+        }        
+    }    
+}
+
+@media only screen and (max-width: 700px) {
+    #dragon-form {
+        padding-bottom: 20px;
+        .form-row {
+            flex-direction: column;
+            
+            .half {
+                width: 100%;
+            }
+        }        
+    }    
+}

@@ -12,6 +12,7 @@ import { NotifyService, NotifyType } from 'src/app/shared/notify/notify.service'
 export class FormComponent implements OnInit {
 
   public dragon: Dragon = new Dragon();
+  public edit = false;
 
   constructor(
     private service: DragonService,
@@ -23,6 +24,7 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
+      this.edit = true;
       this.loadDragon(parseInt(id, 10));
     }
   }
@@ -36,7 +38,7 @@ export class FormComponent implements OnInit {
   }
 
   public save(): void {
-    if (this.dragon.id) {
+    if (this.edit) {
       this.service.update(this.dragon).subscribe(
         () => {
           this.alertService.toast(NotifyType.SUCCESS, 'Dragon saved !');

@@ -1,17 +1,37 @@
-.form-field {
-    position: relative;
+form {
+    .form-field {
+        position: relative;
 
-    & > span.text-alert {
-        position: absolute;
-        top: calc(100%);
-        left: 5px;
-        color: var(--danger);
-        font-size: 11px;
-    }
-    
-    input {
-        outline: 0;
-        padding: 10px 8px;
-        display: block;
+        & > span.text-alert {
+            position: absolute;
+            top: calc(100%);
+            left: 5px;
+            color: var(--danger);
+            font-size: 11px;
+        }
+
+        label {
+            display: block;
+        }
+
+        input, textarea, select {
+            width: calc(100% - 16px);
+            outline: 0;
+            padding: 10px 8px;
+            display: block;
+
+            &.default {
+                background-color: #fff;
+                border-radius: 3px;
+                color: #3a3a3a;
+                border: none;
+                box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, 0.25);
+                transition: box-shadow 0.2s linear;
+
+                &:focus {
+                    box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
     }
 }

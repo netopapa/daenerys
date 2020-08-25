@@ -1,1 +1,39 @@
-<p>form works!</p>
+<div id="dragon-form" class="centralized">
+
+    <div class="card">
+        <div class="form-header">
+            <div class="card">
+                <h5 class="white-text">{{edit ? 'Edit dragon' : 'Add dragon'}}</h5>
+            </div>
+        </div>
+
+        <form #dragonForm="ngForm">
+            <div class="form-row">
+                <div class="form-field half" [appInputAlert]="{value: dragon.name, field: inpName}">
+                    <label class="white-text">Name</label>
+                    <input #inpName="ngModel" class="default" type="text" name="name" maxlength="255"
+                        [(ngModel)]="dragon.name" required>
+                </div>
+
+                <div class="form-field half" [appInputAlert]="{value: dragon.type, field: inpType}">
+                    <label class="white-text">Type</label>
+                    <input #inpType="ngModel" class="default" type="text" name="type" maxlength="255"
+                        [(ngModel)]="dragon.type" required>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label class="white-text">History</label>
+                <textarea class="default" name="history" [(ngModel)]="dragon.history" maxlength="500"></textarea>
+            </div>
+
+            <div class="actions">
+                <button class="btn-closed" type="button" (click)="returnScreen()">Cancel</button>
+                <button class="btn-success" type="submit" [disabled]="!dragonForm.form.valid"
+                    (click)="save()">Save</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
