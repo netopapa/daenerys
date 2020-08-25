@@ -1,0 +1,17 @@
+.form-field {
+    position: relative;
+
+    & > span.text-alert {
+        position: absolute;
+        top: calc(100%);
+        left: 5px;
+        color: var(--danger);
+        font-size: 11px;
+    }
+    
+    input {
+        outline: 0;
+        padding: 10px 8px;
+        display: block;
+    }
+}
