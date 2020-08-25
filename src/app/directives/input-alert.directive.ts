@@ -4,6 +4,7 @@ import { NgModel } from '@angular/forms';
 export interface InputAlertBody {
   value: any;
   field: NgModel;
+  touched: boolean;
 }
 
 @Directive({
@@ -21,7 +22,7 @@ export class InputAlertDirective {
 
   // let the magic happens
   @Input() set appInputAlert(e: InputAlertBody) {
-    if (e.field.errors?.required && e.field.dirty) {
+    if (e.field.errors?.required && e.touched) {
       const alertText: HTMLSpanElement = document.createElement('span');
       alertText.classList.add('text-alert');
       alertText.innerText = e.field.name + ' is required!';

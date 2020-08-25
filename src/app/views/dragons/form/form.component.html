@@ -9,13 +9,13 @@
 
         <form #dragonForm="ngForm">
             <div class="form-row">
-                <div class="form-field half" [appInputAlert]="{value: dragon.name, field: inpName}">
+                <div class="form-field half" [appInputAlert]="{value: dragon.name, field: inpName, touched: inpName.touched}">
                     <label class="white-text">Name</label>
                     <input #inpName="ngModel" class="default" type="text" name="name" maxlength="255"
                         [(ngModel)]="dragon.name" required>
                 </div>
 
-                <div class="form-field half" [appInputAlert]="{value: dragon.type, field: inpType}">
+                <div class="form-field half" [appInputAlert]="{value: dragon.type, field: inpType, touched: inpType.touched}">
                     <label class="white-text">Type</label>
                     <input #inpType="ngModel" class="default" type="text" name="type" maxlength="255"
                         [(ngModel)]="dragon.type" required>

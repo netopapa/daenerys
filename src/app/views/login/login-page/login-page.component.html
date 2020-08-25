@@ -6,11 +6,11 @@
         <h5 class="text-header center blue-text">LOGIN</h5>
 
         <form #loginForm="ngForm">
-            <div class="form-field" [appInputAlert]="{value: user.email, field: inpEmail}">
+            <div class="form-field" [appInputAlert]="{value: user.email, field: inpEmail, touched: inpEmail.touched}">
                 <input #inpEmail="ngModel" placeholder="username@email.com" type="email" name="email" [(ngModel)]="user.email" required>
             </div>
 
-            <div class="form-field" [appInputAlert]="{value: user.password, field: inpPassword}">
+            <div class="form-field" [appInputAlert]="{value: user.password, field: inpPassword, touched: inpPassword.touched}">
                 <input #inpPassword="ngModel" placeholder="password" type="password" name="password" [(ngModel)]="user.password" required>
             </div>
 
