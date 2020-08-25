@@ -22,12 +22,22 @@ export class InputAlertDirective {
 
   // let the magic happens
   @Input() set appInputAlert(e: InputAlertBody) {
+    this.element.querySelector('.text-alert')?.remove();
+
     if (e.field.errors?.required && e.touched) {
       const alertText: HTMLSpanElement = document.createElement('span');
       alertText.classList.add('text-alert');
       alertText.innerText = e.field.name + ' is required!';
 
       this.element.append(alertText);
+
+    } else if (e.field.errors?.pattern && e.touched) {
+      const alertText: HTMLSpanElement = document.createElement('span');
+      alertText.classList.add('text-alert');
+      alertText.innerText = e.field.name + ' is invalid!';
+
+      this.element.append(alertText);
+
     } else {
       this.element.querySelector('.text-alert')?.remove();
     }

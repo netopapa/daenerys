@@ -7,7 +7,7 @@
 
         <form #loginForm="ngForm">
             <div class="form-field" [appInputAlert]="{value: user.email, field: inpEmail, touched: inpEmail.touched}">
-                <input #inpEmail="ngModel" placeholder="username@email.com" type="email" name="email" [(ngModel)]="user.email" required>
+                <input #inpEmail="ngModel" [pattern]="emailPattern" placeholder="username@email.com" type="email" name="email" [(ngModel)]="user.email" required>
             </div>
 
             <div class="form-field" [appInputAlert]="{value: user.password, field: inpPassword, touched: inpPassword.touched}">

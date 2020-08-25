@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Credentials, SecurityService } from '../../../providers/services/security.service';
+import { NotifyService, NotifyType } from 'src/app/shared/notify/notify.service';
 
 // email: 'eve.holt@reqres.in',
 // password: 'askasoasj'
@@ -12,9 +13,11 @@ import { Credentials, SecurityService } from '../../../providers/services/securi
 export class LoginPageComponent {
 
   public user: Credentials = { email: 'eve.holt@reqres.in', password: 'asasasas' };
+  public emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   constructor(
-    private security: SecurityService
+    private security: SecurityService,
+    private notify: NotifyService
   ) { }
 
   public login(): void {
@@ -24,7 +27,8 @@ export class LoginPageComponent {
         this.security.goHome();
       },
       error => {
-        console.error(error);
+        console.log(error);
+        this.notify.toast(NotifyType.ERROR, error.error?.error || 'Something is wrong :(');
       }
     );
   }
