@@ -1,0 +1,47 @@
+#dragon-list {
+    padding-bottom: 20px;
+
+    .content {
+        max-width: 90%;
+
+        .list-header {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                strong {
+                    font-size: 20px;
+                    margin-right: 5px;
+                }
+            }
+
+            h5 {
+                margin: 0;
+            }
+        }
+
+        .card {
+            background-color: var(--primary);
+
+            table {
+                tr {
+                    color: #fff;
+                }
+
+                thead th {
+                    color: #fff;
+                }
+
+                tbody tr:not(:last-child) {
+                    border-color: var(--dark);
+                }
+            }
+        }
+    }
+}

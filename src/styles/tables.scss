@@ -1,0 +1,61 @@
+table {
+    width: 100%;
+    overflow: hidden;
+
+    tr {
+        height: 30px;
+    }
+
+    thead {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+
+        th {
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+
+    tbody {
+        display: block;
+
+        tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            padding: 5px 0 5px 0;
+
+            &:not(:last-child) {
+                border-bottom: 2px solid;
+            }
+
+            td {
+                text-align: center;
+                font-size: 14px;
+
+                button:not(:last-child) {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    table tbody tr td.actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            min-width: 58px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

@@ -3,6 +3,7 @@ button {
     border-radius: 4px;
     padding: 5px 8px;
     transition: 0.3s linear;
+    border: 2px solid;
 
     &:disabled {
         filter: grayscale(100%);
@@ -14,13 +15,28 @@ button {
         margin-right: auto;
     }
 
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    background-color: transparent;
-
-    &:hover {
-        color: #ffffff;
-        background-color: var(--primary);
-        cursor: pointer;
+    &.btn-blue {
+        border-color: var(--primary);
+        color: var(--primary);
+        background-color: transparent;
+    
+        &:hover {
+            color: #ffffff;
+            background-color: var(--primary);
+            cursor: pointer;
+        }
     }
+
+    &.btn-white {
+        border-color: #ffffff;
+        color: #ffffff;
+        background-color: transparent;
+    
+        &:hover {
+            color: var(--primary);
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+    }
+
 }

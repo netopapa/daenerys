@@ -1,0 +1,12 @@
+#main-content {
+    background-color: var(--dark);
+    min-height: 100vh;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 70px;
+        padding: 0 10px 0 10px;
+    }
+}

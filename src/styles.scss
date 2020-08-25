@@ -3,13 +3,14 @@
 @import "styles/buttons.scss";
 @import "styles/cards.scss";
 @import "styles/forms.scss";
+@import "styles/tables.scss";
 
 // base configs
 html,
 body {
     margin: 0;
     font-family: "Roboto Mono", monospace;
-    font-size: 2em;
+    font-size: 1.05rem;
 }
 
 // helpers
@@ -23,6 +24,20 @@ body {
     align-items: center;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 .blue-text {
     color: var(--primary);
+}
+
+.white-text {
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 700px) {
+    .only-desktop {
+        display: none;
+    }
 }

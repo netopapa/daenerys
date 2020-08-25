@@ -1,1 +1,36 @@
-<p>list works!</p>
+<div id="dragon-list" class="centralized">
+
+    <div class="content">
+        <div class="list-header">
+            <button class="btn-white" (click)="create()"><strong>+</strong> Add</button>
+
+            <h5 class="white-text">Dragons ({{dragons.length || 0}})</h5>
+        </div>
+
+        <div class="card">
+            <table cellspacing="0">
+                <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th class="only-desktop"> Created at </th>
+                        <th> Type </th>
+                        <th> Actions </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let item of dragons">
+                        <td>{{ item.name }}</td>
+                        <td class="only-desktop">{{ item.createdAt | date: 'dd/MM/yy hh:mm' }}</td>
+                        <td class="capitalize">{{ item.type }}</td>
+                        <td class="actions">
+                            <button class="btn-white" (click)="edit(item)">edit</button>
+                            <button class="btn-white" (click)="delete(item)">delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

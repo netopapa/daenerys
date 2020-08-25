@@ -19,6 +19,7 @@ export class InputAlertDirective {
     this.element = element.nativeElement;
   }
 
+  // let the magic happens
   @Input() set appInputAlert(e: InputAlertBody) {
     if (e.field.errors?.required && e.field.dirty) {
       const alertText: HTMLSpanElement = document.createElement('span');
