@@ -23,13 +23,10 @@ export class ListComponent implements OnInit {
   }
 
   private getDragons(): void {
-    MainLoadingService.show();
     this.service.getAll().subscribe(
       success => {
         this.dragons = success.sort((a, b) => a.name.localeCompare(b.name));
-        MainLoadingService.hide();
-      },
-      () => { MainLoadingService.hide(); }
+      }
     );
   }
 
