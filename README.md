@@ -1,27 +1,15 @@
 # Daenerys
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
+[DEMO](https://daenerys-rho.vercel.app)
 
-## Development server
+## some details:
+* No external libs.. everything done in manual labor. (ง ͠° ͟ل͜ ͡°)ง
+* All tests OK with Karma & jasmine (ng test) ( ͡° ͜ʖ ͡°)
+* No vulnerabilities (npm audit). All safe ¯\_(ツ)_/¯
+* SCSS styles organization !!
+* Light animations (▀̿Ĺ̯▀̿ ̿)
+* Form validation with directives (ಥ﹏ಥ)
+* Automatic loading with Http Interceptor implementation (☞ຈل͜ຈ)☞
+* Lazy loading & route guard :)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## ENJOY
